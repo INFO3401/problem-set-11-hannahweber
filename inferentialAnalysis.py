@@ -40,7 +40,7 @@ print("Do gender and department correlate with admissions?")
 moreComplex = "Admitted ~ C(Department) + C(Gender)"
 runAnova(rawData, moreComplex)
          
-# Monday Problems - worked with Taylor and Marissa
+# Monday Problems - worked with Taylor and Marissa (11.12)
 
 #1a) Independent - Year, categorical
 #   Dependent - GPA, continuous
@@ -59,3 +59,13 @@ runAnova(rawData, moreComplex)
 #   Stat test - chi-squared test
 
 # Problem 2:
+
+
+# Monday Problems - worked with Taylor, Marissa, Jack, Jacob (11.26)
+
+# Problem 3:
+# There was a text error where there was a space after the word "male" and so the code was only running on some of the male data, rather than all of the male data. To fix this issue you would either have to correct the csv or add the 'male ' to the code. 
+# For the question "does department correlate with admission", the results stayed the same. The output of the T-Test's statistic and p-value changed drastically once the error was fixed. The gender and department correlation with admissions also experienced a big change with the data correction. It is important to find these issues so that the statistical analysis is accurate.
+
+# Problem 4:
+# The Simpson's Paradox is when a trend occurs in different groups of data but then disappears when looking at the data combined. This is seen with the admission and rejection data for each department. When combined there is a constant decrease in admission rates looking at the departments in consecutive order and the rejection rates vary a lot between departments. When you break these departments down into male and female groups you can see the drastic difference between the overall male to female rates and the admission and rejection trends. The male rates are the biggest influence on the overall trends and each department follows the same trends as the overall data. As for the female rates, both the admission and rejection trends vary throughout departments and don't follow a similar pattern as the male and overall trends. The two charts are included in the GitHub.
