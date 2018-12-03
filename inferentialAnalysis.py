@@ -40,7 +40,7 @@ print("Do gender and department correlate with admissions?")
 moreComplex = "Admitted ~ C(Department) + C(Gender)"
 runAnova(rawData, moreComplex)
          
-# Monday Problems - worked with Taylor and Marissa (11.12)
+# Monday Problems - worked with Taylor and Marissa and Jacob (11.12)
 
 #1a) Independent - Year, categorical
 #   Dependent - GPA, continuous
@@ -59,7 +59,18 @@ runAnova(rawData, moreComplex)
 #   Stat test - chi-squared test
 
 # Problem 2:
+# I was able to create the columns but I kept getting an error when I tried to use them in the correlation formulas. However, I did this question last and was able to play with the data enough and I don't think it is biased. There is definitely a significant difference between the male and female numbers across the board but I don't think that the school is biased to either men or women. Because there are way more men than women their numbers of acceptance and rejection are significantly higher but when looking at the percentages they typically are admitted less and rejected more. I think that the school could focus on increasing their recruitment of women but I don't think they are biased in their admissions. 
 
+df["percentRejected"] = (df["Rejected"] / (df["Rejected"] + df["Admitted"]))
+df["percentAdmitted"] = (df["Admitted"] / (df["Rejected"] + df["Admitted"]))
+
+print("Do gender and department correlate with percentRejected?")
+rejectFormula = "percentRejected ~ C(Department) + C(Gender)"
+runAnova(rawData, rejectFormula)
+
+print("Do gender and department correlate with percentAccepted?")
+acceptFormula = "percentAccepted ~ C(Department) + C(Gender)"
+runAnova(rawData, acceptFormula)
 
 # Monday Problems - worked with Taylor, Marissa, Jack, Jacob (11.26)
 
